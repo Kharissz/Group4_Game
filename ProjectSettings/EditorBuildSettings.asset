@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Chapter 1.unity
     guid: 2451a883bb2a174428aa88797b80cc61
   - enabled: 1
+    path: Assets/Scenes/Chapter 1 jalur 2.unity
+    guid: 26989d7d9684c9249893af6c6a246f7a
+  - enabled: 1
     path: Assets/Scenes/Chapter 2.unity
     guid: cbedd04da727a0140b6791bb621bb355
   - enabled: 1
