@@ -7,6 +7,9 @@ public class Gate : MonoBehaviour
 {
     public int SceneBuildIndex;
     bool interact;
+    public GameObject UIbutton;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class Gate : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && interact)
         {
+            // Position.instance.enter = true;
+            // Position.instance.previousPos = Position.instance.playerSpawnPosition;
             SceneManager.LoadScene(SceneBuildIndex, LoadSceneMode.Single);
         }  
     }
@@ -26,7 +31,9 @@ public class Gate : MonoBehaviour
     {
         if(coll.tag == "Player")
         {
+            UIbutton.SetActive(true);
             interact = true;
+            // Position.instance.playerSpawnPosition = coll.transform.position;
         }
     }
 
@@ -34,6 +41,7 @@ public class Gate : MonoBehaviour
     {
         if(coll.tag == "Player")
         {
+            UIbutton.SetActive(false);
             interact = false;
         }
     }

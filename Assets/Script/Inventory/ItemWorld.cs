@@ -32,7 +32,7 @@ public class ItemWorld : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         light2d = GetComponent<Light2D>();
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
-        Debug.Log(textMeshPro.transform);
+        // Debug.Log(textMeshPro.transform);
 
     }
     public void SetItem(Item item)

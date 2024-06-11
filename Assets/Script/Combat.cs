@@ -26,7 +26,8 @@ public class Combat : MonoBehaviour
                 print("Attack");
                 stamina.Stamina_Attack();
             }
-            
+
         }
+
     }
 }

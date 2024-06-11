@@ -8,6 +8,7 @@ TagManager:
   - lantern
   - hantu
   - gate
+  - UI
   layers:
   - Default
   - TransparentFX
