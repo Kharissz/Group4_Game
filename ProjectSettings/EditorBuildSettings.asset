@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter 1 jalur 1.unity
     guid: 9e4282c03093b6c44b401a0be20643b5
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Chapter 2.unity
+    guid: e53981c95a059544d82fd2b8db9ee145
+  - enabled: 1
     path: Assets/Scenes/Cutscene 2.unity
     guid: 02d5cd857a4d1fc4f8e14a1137a8a5b4
-  - enabled: 0
-    path: Assets/Scenes/Chapter 2.unity
-    guid: cbedd04da727a0140b6791bb621bb355
-  - enabled: 0
-    path: Assets/Scenes/Chapter 3.unity
-    guid: 480f2aebee873ad48a7eec90e8715c0a
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: 7c48cde92fb716e459e7c99b703cd34e
   m_configObjects: {}

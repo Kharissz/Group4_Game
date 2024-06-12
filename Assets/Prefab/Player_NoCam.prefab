@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 8283973944078419112}
   - component: {fileID: 1542686495307549488}
   - component: {fileID: 1060657799575145942}
+  - component: {fileID: 6239714558315074896}
   m_Layer: 3
   m_Name: Player_NoCam
   m_TagString: Player
@@ -75,7 +76,7 @@ Transform:
   - {fileID: 4319164086087368444}
   - {fileID: 2976928002505404635}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &274066854673737675
 SpriteRenderer:
@@ -371,6 +372,18 @@ MonoBehaviour:
   profile: {fileID: 11400000, guid: 0586305d7b03dab458967950402815de, type: 2}
   ChargeRate: 1
   ghost: {fileID: 0}
+--- !u!114 &6239714558315074896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248569351539052571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8031f8462980ec44c82186e93d0a02e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2990126465251050645
 GameObject:
   m_ObjectHideFlags: 0

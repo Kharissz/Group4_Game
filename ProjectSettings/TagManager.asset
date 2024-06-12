@@ -9,6 +9,8 @@ TagManager:
   - hantu
   - gate
   - UI
+  - free
+  - Spawn
   layers:
   - Default
   - TransparentFX

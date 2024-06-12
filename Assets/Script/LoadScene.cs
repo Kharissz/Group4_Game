@@ -24,7 +24,8 @@ public class LoadScene : MonoBehaviour
 
     void OnEnable()
     {
-        SceneManager.LoadScene("Chapter 1",LoadSceneMode.Single);
+        LoadNextScene();
+
     }
 
 }
