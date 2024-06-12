@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour
 {
-    public int SceneBuildIndex;
-    bool interact;
-    public GameObject UIbutton;
 
+    [SerializeField] GameObject tujuan;
+    [SerializeField] GameObject daerah;
+    public GameObject UIbutton;
+    private GameObject player;
+    private GameObject vcamera;
+    private Daerah domain;
+    bool interact;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        vcamera = GameObject.FindGameObjectWithTag("Vcam");
 
+        domain = vcamera.GetComponent<Daerah>();
     }
 
     // Update is called once per frame
@@ -21,10 +27,8 @@ public class Gate : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && interact)
         {
-            // Position.instance.enter = true;
-            // Position.instance.previousPos = Position.instance.playerSpawnPosition;
-            SceneManager.LoadScene(SceneBuildIndex, LoadSceneMode.Single);
-        }  
+            Teleport();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -44,5 +48,11 @@ public class Gate : MonoBehaviour
             UIbutton.SetActive(false);
             interact = false;
         }
+    }
+
+    void Teleport()
+    {
+        player.transform.position = tujuan.transform.position;
+        domain.ChangeCam(daerah);
     }
 }

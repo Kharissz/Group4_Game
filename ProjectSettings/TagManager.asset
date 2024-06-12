@@ -9,8 +9,10 @@ TagManager:
   - hantu
   - gate
   - UI
-  - free
   - Spawn
+  - domain
+  - Vcam
+  - InteractButton
   layers:
   - Default
   - TransparentFX
