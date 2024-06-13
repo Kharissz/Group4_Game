@@ -31,6 +31,15 @@ public class NextScene : MonoBehaviour
         }
     }
 
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if(coll.tag == "Player")
+        {
+            button.SetActive(false);
+            enter = true;
+        }
+    }
+
     void Next()
     {
         // Assuming scenes are in a build order

@@ -13,16 +13,16 @@ public class Movement : MonoBehaviour
 
     public float runSpeed = 20f;
 
-    float  horizontalMove = 0f;
+    public float  horizontalMove = 0f;
 
-    private bool jump = false;
+    bool jump = false;
 
     bool crouch = false;
 
     bool running;
 
-
     public StaminaBar stamina;
+    [SerializeField] private Hiding hiding;
 
     void Start()
     {
@@ -34,15 +34,10 @@ public class Movement : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         anim.SetFloat("Running", Math.Abs(horizontalMove));
-
+        
         if (Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-
-            // Loncat
-            anim.SetBool("isJumping", jump);
-        }
-
+        {Jummping(hiding.isHiding);}
+        
         if (Input.GetButtonDown("Crouch"))
         {crouch = true;}
         else if (Input.GetButtonUp("Crouch"))
@@ -77,6 +72,13 @@ public class Movement : MonoBehaviour
     public void OnCrouching (bool isCrouching)
     {
         // anim.SetBool("isCrouching", isCrouching);
+    }
+
+    void Jummping(bool hide)
+    {
+        if(!hide)jump = true;
+        // Loncat
+        anim.SetBool("isJumping", jump); 
     }
 
 }
