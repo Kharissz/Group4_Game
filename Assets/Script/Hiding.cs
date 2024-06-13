@@ -10,6 +10,7 @@ public class Hiding : MonoBehaviour
     private Rigidbody2D rigidPlayer;
     private CapsuleCollider2D collPlayer;
     private Transform capsule;
+    private GameObject cap;
     private int i = 1;
 
     bool hide = false;
@@ -23,7 +24,9 @@ public class Hiding : MonoBehaviour
         capsule = transform.Find("isTrigger");
         collPlayer = capsule.GetComponent<CapsuleCollider2D>();
 
-        Debug.Log(collPlayer);
+        cap = GameObject.Find("isTrigger");
+
+        Debug.Log(cap);
     }
 
     void Update()
@@ -42,6 +45,7 @@ public class Hiding : MonoBehaviour
             animPlayer.SetBool("Hiding", isHiding);
             rigidPlayer.constraints = RigidbodyConstraints2D.FreezeAll;
             collPlayer.enabled = false;
+            // cap.SetActive(false);
             i++;
         } 
     }
@@ -54,6 +58,8 @@ public class Hiding : MonoBehaviour
             animPlayer.SetBool("Hiding", isHiding);
             rigidPlayer.constraints = RigidbodyConstraints2D.FreezeRotation;
             collPlayer.enabled = true;
+            // cap.SetActive(true);
+
             i--;
         }
     }
