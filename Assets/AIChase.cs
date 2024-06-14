@@ -20,11 +20,13 @@ public class AIChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Chase();
         if(isHide.isHiding || distance > distanceBetween)
         {
-            Invoke("Back",3f);   
+            // Invoke("Back",3f);
+            stationer.Stationing();
         }
+        else
+        {Chase();}
     }
 
     void Chase()
@@ -38,7 +40,8 @@ public class AIChase : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position,player.transform.position, speed*Time.deltaTime);
             if(player.transform.position.x < transform.position.x) transform.localScale = new Vector3(-1,1,1);
-            else if(player.transform.position.x > transform.position.x) transform.localScale = new Vector3(1,1,1);
+            else 
+            {transform.localScale = new Vector3(1,1,1);} 
         }
     }
 

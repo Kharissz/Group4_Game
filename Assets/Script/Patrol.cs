@@ -14,6 +14,11 @@ public class Patrol : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    void Update()
+    {
+        Patroling();
+    }
+
     public void Patroling()
     {
         if (Vector2.Distance(transform.position,point[i].position) < 0.02f)

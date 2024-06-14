@@ -6,34 +6,33 @@ using UnityEngine.Rendering.Universal;
 
 public class Sanity : MonoBehaviour
 {
+    [SerializeField] GameObject gameOverUI;
     public VolumeProfile profile;
     public float ChargeRate;
     private Coroutine recharge;
-    Vignette dark;
-    public Hantu ghost;
-    // Start is called before the first frame update
+    public Vignette dark;
     void Start()
     {
         profile.TryGet(out dark);
         dark.intensity.value = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
     }
 
-    void getHit(float damage)
+    void getHit()
     {
 
-        dark.intensity.value += Mathf.Lerp(0,0.4f,damage);
+        // dark.intensity.value += Mathf.Lerp(0,0.4f,damage);
 
         if(recharge != null) StopCoroutine(recharge);
         recharge = StartCoroutine(LoseSanity());
 
         if(dark.intensity.value >= .4f)
         {
-            print("You're Nuts");
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 
@@ -54,7 +53,8 @@ public class Sanity : MonoBehaviour
     {
         if(coll.tag == "hantu")
         {
-            getHit(ghost.damage);
+            getHit();
+            // Debug.Log("Terserang Hantu");
         }
     }
 }

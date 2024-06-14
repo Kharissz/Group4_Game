@@ -27,7 +27,6 @@ public class Hiding : MonoBehaviour
         ghosts = GameObject.FindGameObjectsWithTag("hantu");
         sensors = GameObject.FindGameObjectsWithTag("sensor");
 
-        Debug.Log(ghosts);
     }
 
     void Update()
