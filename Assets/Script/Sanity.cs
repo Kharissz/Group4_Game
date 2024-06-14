@@ -31,6 +31,9 @@ public class Sanity : MonoBehaviour
 
         if(dark.intensity.value >= .4f)
         {
+            // SFX GameOver
+            // AudioManager.Instance.PlaySfx("");
+            
             gameOverUI.SetActive(true);
             Time.timeScale = 0;
         }

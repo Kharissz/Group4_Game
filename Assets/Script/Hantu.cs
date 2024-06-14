@@ -29,6 +29,9 @@ public class Hantu : MonoBehaviour
     void HitPlayer()
     {
         sanity.dark.intensity.value += Mathf.Lerp(0,0.4f,damage);
+
+        // SFX kena hit / Jumpscare
+        // AudioManager.Instance.PlaySfx("");
     }
 
 }
