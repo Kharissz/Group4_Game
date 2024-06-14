@@ -10,7 +10,8 @@ public class Hiding : MonoBehaviour
     private Rigidbody2D rigidPlayer;
     private CapsuleCollider2D collPlayer;
     private Transform capsule;
-    private GameObject cap;
+    public GameObject[] ghosts;
+    public GameObject[] sensors;
     private int i = 1;
 
     bool hide = false;
@@ -23,10 +24,10 @@ public class Hiding : MonoBehaviour
         rigidPlayer = player.GetComponent<Rigidbody2D>();
         capsule = transform.Find("isTrigger");
         collPlayer = capsule.GetComponent<CapsuleCollider2D>();
+        ghosts = GameObject.FindGameObjectsWithTag("hantu");
+        sensors = GameObject.FindGameObjectsWithTag("sensor");
 
-        cap = GameObject.Find("isTrigger");
-
-        Debug.Log(cap);
+        Debug.Log(ghosts);
     }
 
     void Update()
@@ -39,13 +40,24 @@ public class Hiding : MonoBehaviour
 
     void Hide()
     {
-        if(Input.GetKeyDown("e") && (hide||!isHiding) &&  i==1)
+        if(Input.GetKeyDown("e") && hide && !isHiding &&  i==1)
         { 
             isHiding = true;
             animPlayer.SetBool("Hiding", isHiding);
             rigidPlayer.constraints = RigidbodyConstraints2D.FreezeAll;
             collPlayer.enabled = false;
-            // cap.SetActive(false);
+
+            foreach(GameObject ghost in ghosts)
+            {
+                BoxCollider2D coll = ghost.GetComponent<BoxCollider2D>();
+                coll.enabled=false;
+            }
+            foreach(GameObject sensor in sensors)
+            {
+                BoxCollider2D sen = sensor.GetComponent<BoxCollider2D>();
+                sen.enabled = false;
+            }
+            
             i++;
         } 
     }
@@ -58,7 +70,17 @@ public class Hiding : MonoBehaviour
             animPlayer.SetBool("Hiding", isHiding);
             rigidPlayer.constraints = RigidbodyConstraints2D.FreezeRotation;
             collPlayer.enabled = true;
-            // cap.SetActive(true);
+
+            foreach(GameObject ghost in ghosts)
+            {
+                BoxCollider2D coll = ghost.GetComponent<BoxCollider2D>();
+                coll.enabled=true;
+            }
+            foreach(GameObject sensor in sensors)
+            {
+                BoxCollider2D sen = sensor.GetComponent<BoxCollider2D>();
+                sen.enabled = true;
+            }
 
             i--;
         }

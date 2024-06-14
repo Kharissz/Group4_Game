@@ -40,7 +40,7 @@ public class NextScene : MonoBehaviour
         }
     }
 
-    void Next()
+    public void Next()
     {
         // Assuming scenes are in a build order
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
