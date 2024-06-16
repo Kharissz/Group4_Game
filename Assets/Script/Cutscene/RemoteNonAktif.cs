@@ -9,9 +9,4 @@ public class RemoteNonAktif : MonoBehaviour
     {
         objek.SetActive(false);
     }
-
-    void OnEnable()
-    {
-        NonAktif();
-    }
 }

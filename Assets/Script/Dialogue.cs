@@ -13,6 +13,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject buttonUI;
     private GameObject player;
     private Rigidbody2D control;
+    private Trigger trigger;
     public string nama;
     public string[] lines;
     public float textSpeed;
@@ -27,6 +28,17 @@ public class Dialogue : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player");
         control = player.GetComponent<Rigidbody2D>();
+
+        if(gameObject.GetComponent<Trigger>()!=null)
+        {
+            trigger = GetComponent<Trigger>();
+        }
+        else
+        {
+            trigger = null;
+        }
+
+        Debug.Log(trigger);
     }
 
     // Update is called once per frame
@@ -63,6 +75,10 @@ public class Dialogue : MonoBehaviour
         box.SetActive(false);
         dial = false;
         control.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        if(trigger!=null)
+        {trigger.Picu();}
+        
    }
 
    void NextLine()
@@ -92,6 +108,7 @@ public class Dialogue : MonoBehaviour
    {
         if(coll.CompareTag("Player"))
         {
+            comm = false;
             buttonUI.SetActive(false);
         }
    }
