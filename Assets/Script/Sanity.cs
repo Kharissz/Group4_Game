@@ -32,7 +32,7 @@ public class Sanity : MonoBehaviour
         if(dark.intensity.value >= .4f)
         {
             // SFX GameOver
-            // AudioManager.Instance.PlaySfx("");
+            AudioManager.Instance.PlaySfx("GameOver");
             
             gameOverUI.SetActive(true);
             Time.timeScale = 0;
@@ -41,13 +41,14 @@ public class Sanity : MonoBehaviour
 
     private IEnumerator LoseSanity()
     {
-        yield return new WaitForSeconds(1f);
+        // yield return new WaitForSeconds(1f);
 
         while(dark.intensity.value > 0)
         {
             dark.intensity.value-=ChargeRate/100f;
             if(dark.intensity.value < 0) dark.intensity.value = 0;
-            yield return new WaitForSeconds(.1f);
+            // Debug.Log(Time.time);
+            yield return new WaitForSeconds(1f);
         }
         
     }

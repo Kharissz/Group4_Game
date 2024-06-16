@@ -15,6 +15,7 @@ TagManager:
   - InteractButton
   - hide
   - sensor
+  - Dialogue
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 1681898799
+    locked: 0
+  - name: 2
+    uniqueID: 1208911303
+    locked: 0
+  - name: 3
+    uniqueID: 1813721201
+    locked: 0
+  - name: 4
+    uniqueID: 4021957021
     locked: 0

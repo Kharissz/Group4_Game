@@ -5,16 +5,18 @@ using UnityEngine;
 public class AIChase : MonoBehaviour
 {
     [SerializeField] private Stationer stationer;
-    public GameObject player;
+    private GameObject player;
+    // private Hantu hantu;
     private Hiding isHide;
-    private bool detect;
     public float speed;
     public float distance;
     public float distanceBetween;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         isHide = player.GetComponent<Hiding>();
+        // hantu = GetComponent<Hantu>();
     }
 
     // Update is called once per frame
@@ -26,12 +28,14 @@ public class AIChase : MonoBehaviour
             stationer.Stationing();
         }
         else
-        {Chase();}
+        {
+            Chase();
+        }
+        distance = Vector2.Distance(transform.position, player.transform.position);
     }
 
     void Chase()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 

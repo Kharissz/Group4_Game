@@ -10,11 +10,13 @@ public class Hantu : MonoBehaviour
     public float kecepatanAwal;
     private GameObject player;
     private Sanity sanity;
+    public bool kena = false;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         sanity = player.GetComponent<Sanity>();
+
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -22,8 +24,16 @@ public class Hantu : MonoBehaviour
         if(coll.CompareTag("Player"))
         {
             // Debug.Log("Menyentuh Player");
-            HitPlayer();
+            // HitPlayer();
+            kena = true;
+            StartCoroutine(HitPlayer1());            
         }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if(coll.CompareTag("Player"))
+        {kena = false;}
     }
 
     void HitPlayer()
@@ -32,6 +42,21 @@ public class Hantu : MonoBehaviour
 
         // SFX kena hit / Jumpscare
         // AudioManager.Instance.PlaySfx("");
+    }
+
+    private IEnumerator HitPlayer1()
+    {
+
+        // yield return new WaitForSeconds(.5f);
+        
+        sanity.dark.intensity.value += Mathf.Lerp(0,0.4f,damage);
+        // AudioManager.Instance.PlaySfx("");
+
+        Debug.Log(sanity.dark.intensity.value);
+
+        yield return new WaitForSeconds(2f);
+
+
     }
 
 }

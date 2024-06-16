@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Hiding : MonoBehaviour
 {
+    private Transform capsule;
     private GameObject player;
-    [SerializeField] private GameObject interactButton;
     private Animator animPlayer;
     private Rigidbody2D rigidPlayer;
     private CapsuleCollider2D collPlayer;
-    private Transform capsule;
+    [SerializeField] private GameObject interactButton;
+    [SerializeField] GameObject lamp;
     public GameObject[] ghosts;
     public GameObject[] sensors;
     private int i = 1;
@@ -45,6 +46,7 @@ public class Hiding : MonoBehaviour
             animPlayer.SetBool("Hiding", isHiding);
             rigidPlayer.constraints = RigidbodyConstraints2D.FreezeAll;
             collPlayer.enabled = false;
+            lamp.SetActive(false);
 
             foreach(GameObject ghost in ghosts)
             {
@@ -69,6 +71,7 @@ public class Hiding : MonoBehaviour
             animPlayer.SetBool("Hiding", isHiding);
             rigidPlayer.constraints = RigidbodyConstraints2D.FreezeRotation;
             collPlayer.enabled = true;
+            lamp.SetActive(true);
 
             foreach(GameObject ghost in ghosts)
             {
