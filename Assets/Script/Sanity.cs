@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 public class Sanity : MonoBehaviour
 {
-    [SerializeField] GameObject gameOverUI;
+    [SerializeField] private GameObject gameOverUI;
     public VolumeProfile profile;
     public float ChargeRate;
     private Coroutine recharge;
@@ -15,6 +16,7 @@ public class Sanity : MonoBehaviour
     {
         profile.TryGet(out dark);
         dark.intensity.value = 0;
+
     }
 
     void Update()

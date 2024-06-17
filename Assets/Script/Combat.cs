@@ -5,29 +5,29 @@ using UnityEngine.UI;
 
 public class Combat : MonoBehaviour
 {
-    public StaminaBar stamina;
+    bool equip = false;
+    private StaminaBar stamina;
+    private Animator anim;
     void Start()
     {
-        
+        stamina = GetComponent<StaminaBar>();
+        anim = GetComponent<Animator>();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Attack();        
+        // Attack();
+        if(Input.GetMouseButtonDown(0) && equip)
+        {
+            anim.SetTrigger("Attack");
+        }  
     }
 
-    void Attack()
+    public void Attack()
     {
-        if(Input.GetKeyDown("f"))
-        {
             if(stamina.Stamina >= 50)
-            {
-                print("Attack");
-                stamina.Stamina_Attack();
-            }
-
-        }
+            {stamina.Stamina_Attack();}
 
     }
 }

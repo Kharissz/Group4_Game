@@ -37,8 +37,6 @@ public class Dialogue : MonoBehaviour
         {
             trigger = null;
         }
-
-        Debug.Log(trigger);
     }
 
     // Update is called once per frame
@@ -75,6 +73,7 @@ public class Dialogue : MonoBehaviour
         box.SetActive(false);
         dial = false;
         control.constraints = RigidbodyConstraints2D.FreezeRotation;
+        StopCoroutine(TypeLine());
 
         if(trigger!=null)
         {trigger.Picu();}
@@ -91,6 +90,7 @@ public class Dialogue : MonoBehaviour
         } 
         else
         {
+            Debug.Log("Dialog Berakhir");
             EndDialogue();            
         }
    }
