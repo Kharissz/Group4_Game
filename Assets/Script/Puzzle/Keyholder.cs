@@ -13,7 +13,7 @@ public class Keyholder : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
             CollectedKey = new HashSet<string>();
             LoadCollectedKey();
         }

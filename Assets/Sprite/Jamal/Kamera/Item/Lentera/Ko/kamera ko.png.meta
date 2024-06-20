@@ -117,18 +117,62 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: kamera ko_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 57
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2fcf78de03851a45b24886d2bb9363a
+      internalID: -970639938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kamera ko_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 33
+        width: 385
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff774c1a94dcfbe4dba340c098e1e8a6
+      internalID: -186693110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0f8731e5cba34e742bb78f3d57be21ca
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kamera ko_0: -970639938
+      kamera ko_1: -186693110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

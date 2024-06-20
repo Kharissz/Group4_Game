@@ -117,18 +117,40 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: kamera hit dmg lentera2_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 686
+        width: 1597
+        height: 2613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779b9180d3cc4474fac782c0c551fde2
+      internalID: 2040969857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 492494e76e8b02a4197ad801abeffd36
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kamera hit dmg lentera2_0: 2040969857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

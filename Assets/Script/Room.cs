@@ -5,17 +5,12 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public GameObject Vcam;
+    public GameObject Image;
 
-    void OnTriggerEnter2D (Collider2D coll)
+    void Start()
     {
-        if(coll.CompareTag("Player") && !coll.isTrigger)
-        {Vcam.SetActive(true);}
+        Image.SetActive(false);
     }
 
-    void OnTriggerExit2D (Collider2D coll)
-    {
-        if(coll.CompareTag("Player") && !coll.isTrigger)
-        {Vcam.SetActive(false);}
-    }
+    
 }

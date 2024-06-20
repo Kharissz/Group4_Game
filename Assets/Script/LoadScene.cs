@@ -14,10 +14,9 @@ public class LoadScene : MonoBehaviour
         // Check if the next scene index is not out of range
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            // Berhenti menyalakan BGM ketika pindah scene
-            AudioManager.Instance.musicSource.Stop();
-            
             SceneManager.LoadScene(nextSceneIndex);
+            // Berhenti menyalakan BGM ketika pindah scene
+            // AudioManager.Instance.musicSource.Stop();
         }
         else
         {

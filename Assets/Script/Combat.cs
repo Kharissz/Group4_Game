@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class Combat : MonoBehaviour
 {
-    bool equip = false;
     private StaminaBar stamina;
     private Animator anim;
+    public float attackRate = 2f;
+    public Transform attackpoint;
+    public LayerMask enemyLayers;
+    public float attackRange = 0.5f;
+    public int attackDamage = 20;
     void Start()
     {
         stamina = GetComponent<StaminaBar>();
@@ -17,17 +21,42 @@ public class Combat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Attack();
-        if(Input.GetMouseButtonDown(0) && equip)
+        if(stamina.Stamina >=50)
         {
-            anim.SetTrigger("Attack");
-        }  
+            if(Input.GetMouseButtonDown(0))
+            {
+                anim.SetTrigger("Attack");
+            }  
+        }
+        
     }
 
-    public void Attack()
+    void Attack()
     {
-            if(stamina.Stamina >= 50)
-            {stamina.Stamina_Attack();}
 
+            // 1. Jalankan animasi menyerang
+            stamina.Stamina_Attack();
+        
+
+
+        // 2. Deteksi musuh yang terkena
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackpoint.position, attackRange, enemyLayers);
+        // Collider2D[] hitBoss = Physics2D.OverlapCircleAll(attackpoint.position, attackRange, enemyLayers);
+
+
+        // 3. Kasih damage
+        foreach(Collider2D enemy in hitEnemies)
+        {
+ 
+            enemy.GetComponent<Hantu>().TakeDamage();
+        }
+
+    }
+    
+    void OnDrawGizmosSelected()
+    {
+        if(attackpoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackpoint.position,attackRange);
     }
 }

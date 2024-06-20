@@ -16,6 +16,7 @@ TagManager:
   - hide
   - sensor
   - Dialogue
+  - Musik
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Ground
   - PostProcessing
   - Item
-  - 
+  - Hantuu
   - 
   - 
   - 

@@ -15,6 +15,8 @@ public class Dialogue : MonoBehaviour
     private Rigidbody2D control;
     private Trigger trigger;
     public string nama;
+    public string nama2;
+
     public string[] lines;
     public float textSpeed;
     private bool comm;
@@ -36,6 +38,11 @@ public class Dialogue : MonoBehaviour
         else
         {
             trigger = null;
+        }
+
+        if(nama2 =="")
+        {
+            nama2 = null;
         }
     }
 
@@ -85,6 +92,13 @@ public class Dialogue : MonoBehaviour
         if(index < lines.Length -1 )
         {
             index++;
+            if(nama2!=null)
+            {
+                if(index % 2 != 0)
+                {chara.text = nama2;}
+                else
+                {chara.text = nama;}
+            }
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         } 

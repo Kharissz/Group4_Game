@@ -46,6 +46,8 @@ public class NextScene : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
+        Debug.Log(SceneManager.sceneCountInBuildSettings);
+
         // Check if the next scene index is not out of range
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {

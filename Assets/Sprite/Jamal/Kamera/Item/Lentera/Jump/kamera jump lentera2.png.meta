@@ -117,18 +117,40 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: kamera jump lentera2_0
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 918
+        width: 1156
+        height: 2764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f446ff150df92f43b87af8177231052
+      internalID: -1284663289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f4efc95494168c041b73c5dcbe17e41a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kamera jump lentera2_0: -1284663289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

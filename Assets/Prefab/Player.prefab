@@ -762,7 +762,9 @@ MonoBehaviour:
   script: {fileID: 5019393952874433755}
   anim: {fileID: 1435203220496312106}
   runSpeed: 30
+  horizontalMove: 0
   stamina: {fileID: 7813853754463360046}
+  hiding: {fileID: 0}
 --- !u!114 &7657727649618625596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda2a7cf3689fe548bc65e1ba034df02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stamina: {fileID: 7813853754463360046}
 --- !u!114 &7813853754463360046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,9 +807,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38830c49931d78e48b602cc5b8662bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
   profile: {fileID: 11400000, guid: 0586305d7b03dab458967950402815de, type: 2}
   ChargeRate: 1
-  ghost: {fileID: 0}
+  dark: {fileID: 0}
 --- !u!1 &7223160767801043362
 GameObject:
   m_ObjectHideFlags: 0
